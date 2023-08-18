@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	numElements = 10000000
+	numElements = 10_000_000
 )
 
 var foo = make(map[string]int, numElements)
