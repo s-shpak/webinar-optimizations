@@ -46,14 +46,13 @@ go tool pprof mem.out
 
 Объяснение устройства интерфейсов: см. слайды.
 
-Убедимся в том, что `FormatIntSprintf` действительно аллоцирует память при передаче `i` в `fmt.Sprintf`:
+Убедимся в том, что `FormatIntSprintf` действительно аллоцирует память при передаче `i` в `fmt.Sprintf` (это также можно сделать при помощи команды `list` pprof: `list optimizations/cmd/strconv_vs_fmt.FormatIntSprintf`):
 
 ```bash
 go build -gcflags '-S -N' main.go &> main.s
 ```
 
 Определение `convT64` находится в исходном коде Go в `src/runtime/iface.go`.
-
 
 **Вопрос**: разобрав как устроены интерфейсы в Go, посмотрите на 9 строку файла `cmd/iface_puzzle/decl.go`. Как вы думаете, что она делает?
 
