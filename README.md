@@ -155,11 +155,15 @@ go test -gcflags="-d=ssa/check_bce/debug=1" -bench="^BenchmarkSumFirstElementsOf
 Запустим пример без использования `sync.Pool`:
 
 ```bash
-go test -run TestNoPool -memprofile mem.out -v -count=5
+go test -run TestNoPool -memprofile mem.out -v -count=2
 ```
 
 и с `sync.Pool`:
 
 ```bash
-go test -run TestWithPool -memprofile mem-pool.out -v -count=5
+go test -run TestWithPool -memprofile mem-pool.out -v -count=2
 ```
+
+# PGO
+
+https://habr.com/en/companies/yandex_praktikum/articles/729570/
